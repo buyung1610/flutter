@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,17 +10,41 @@ class page2 extends StatelessWidget {
           "halaman 2",
           style: TextStyle(color: Colors.white),
         ),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.amber,
       ),
-      body: const Center(
-        child: Text(
-        "INI PAGE 2",
-        style: TextStyle(fontSize: 50),
+      body:  Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "INI PAGE 2",
+              style: TextStyle(fontSize: 50),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text(
+                    "<< BACK",
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/page3');
+                  },
+                  child: Text(
+                    "NEXT >>",
+                    style: TextStyle(fontSize: 25),
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {Navigator.of(context).pop();},
-        child: Icon(Icons.keyboard_arrow_left),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

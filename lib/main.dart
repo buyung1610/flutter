@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './page/page_2.dart';
+import './page/page_3.dart';
 import './page/page_1.dart';
 
 void main() {
@@ -10,7 +12,12 @@ class myApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: page1(),
+      initialRoute: '/page1',
+      routes: {
+        '/page1' : (context) => page1(),
+        '/page2' : (context) => page2(),
+        '/page3' : (context) => page3()
+      },
     );
   }
 }
